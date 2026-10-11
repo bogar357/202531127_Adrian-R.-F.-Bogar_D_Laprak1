@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum - Pendaftaran</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+        }
+
+        header {
+            background-color: #174a6e;
+            color: white;
+            padding: 20px 5%;
+        }
+
+        nav {
+            background-color: #e8f1f6;
+            padding: 12px 5%;
+        }
+
+        nav a {
+            color: #174a6e;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav span {
+            margin: 0 10px;
+            color: #777;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 28px auto;
+            padding: 0 20px;
+        }
+
+        form {
+            max-width: 760px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 180px 18px minmax(0, 1fr);
+            gap: 8px;
+            align-items: start;
+            margin: 14px 0;
+        }
+
+        .form-row > label {
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            font: inherit;
+        }
+
+        .choices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .choices label {
+            font-weight: normal;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .choices input {
+            width: auto;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-left: 206px;
+        }
+
+        button {
+            padding: 9px 18px;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #174a6e;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: #e4e4e4;
+            color: #222;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 18px;
+            text-align: center;
+            background-color: #f5f7f8;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 3px;
+            }
+
+            .colon {
+                display: none;
+            }
+
+            .buttons {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Kepala halaman -->
+    <header>
+        <h1>Laporan Praktikum Pendaftaran</h1>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="index.html">Beranda (index.html)</a>
+        <span>|</span>
+        <a href="pendaftaran.html">
+            Pendaftaran (pendaftaran.html)
+        </a>
+    </nav>
+
+    <hr>
+
+    <main>
+        <h2>Form Pendaftaran Praktikan</h2>
+
+        <form action="#" method="post">
+
+            <!-- Nama lengkap -->
+            <div class="form-row">
+                <label for="nama">Nama Lengkap</label>
+                <span class="colon">:</span>
+                <input
+                    type="text"
+                    id="nama"
+                    name="nama"
+                    required
+                >
+            </div>
+
+            <!-- Password -->
+            <div class="form-row">
+                <label for="pass">Password</label>
+                <span class="colon">:</span>
+                <input
+                    type="password"
+                    id="pass"
+                    name="pass"
+                    required
+                >
+            </div>
+
+            <!-- NIM -->
+            <div class="form-row">
+                <label for="nim">NIM</label>
+                <span class="colon">:</span>
+                <input
+                    type="number"
+                    id="nim"
+                    name="nim"
+                    required
+                >
+            </div>
+
+            <!-- Tanggal lahir -->
+            <div class="form-row">
+                <label for="tgl">Tanggal Lahir</label>
+                <span class="colon">:</span>
+                <input
+                    type="date"
+                    id="tgl"
+                    name="tgl"
+                    required
+                >
+            </div>
+
+            <!-- Jenis kelamin -->
+            <div class="form-row">
+                <span>Jenis Kelamin</span>
+                <span class="colon">:</span>
+
+                <div class="choices">
+                    <label>
+                        <input
+                            type="radio"
+                            name="jk"
+                            value="L"
+                            required
+                        >
+                        Laki-Laki
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="jk"
+                            value="P"
+                        >
+                        Perempuan
+                    </label>
+                </div>
+            </div>
+
+            <!-- Minat bidang -->
+            <div class="form-row">
+                <span>Minat bidang</span>
+                <span class="colon">:</span>
+
+                <div class="choices">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="minat"
+                            value="web"
+                        >
+                        Web
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="minat"
+                            value="network"
+                        >
+                        Jaringan
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="minat"
+                            value="design"
+                        >
+                        Design/Modeling
+                    </label>
+                </div>
+            </div>
+
+            <!-- Program studi -->
+            <div class="form-row">
+                <label for="prodi">Program Studi</label>
+                <span class="colon">:</span>
+
+                <select id="prodi" name="prodi" required>
+                    <option value="">
+                        -- Pilih Program Studi --
+                    </option>
+
+                    <option value="IF">
+                        S1 Teknik Informatika
+                    </option>
+
+                    <option value="SI">
+                        S1 Sistem Informasi
+                    </option>
+                </select>
+            </div>
+
+            <!-- Alasan mendaftar -->
+            <div class="form-row">
+                <label for="alasan">Alasan Mendaftar</label>
+                <span class="colon">:</span>
+
+                <textarea
+                    id="alasan"
+                    name="alasan"
+                    rows="3"
+                    minlength="20"
+                    required
+                ></textarea>
+            </div>
+
+            <!-- Tombol formulir -->
+            <div class="buttons">
+                <button type="submit">Kirim</button>
+                <button type="reset">Reset</button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Kaki halaman -->
+    <footer>
+        <p>&copy; 2026, Adrian Romoaldus Fabian Bogar_202531127.</p>
+    </footer>
+
+</body>
+</html>
